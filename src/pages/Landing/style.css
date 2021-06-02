@@ -1,0 +1,62 @@
+#page-landing {
+    width: 100vw;
+}
+
+#background-middle {
+    position: absolute;
+    margin: 45vh 0;
+    z-index: -1;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.content>div {
+    width: 33%;
+    flex: 1 1 30%;
+}
+
+#title {
+    height: 197px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#create {
+    font-size: 2.65rem;
+}
+
+#everything {
+    font-family: 'Montserrat Subrayada', sans-serif;
+    font-size: 6.68rem;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+    margin: 0 auto;
+}
+
+#logo {
+    margin: 2.5rem 0 0 3rem;
+    align-self: start;
+}
+
+#logo>img {
+    width: 88px;
+    height: 35px;
+}
+
+#portfolio-phone-1 {
+    margin: 0 auto;
+    flex-grow: 3;
+    text-align: center;
+}
+
+#portfolio-phone-1>img {
+    width: 1234px;
+    margin: 0 auto;
+}

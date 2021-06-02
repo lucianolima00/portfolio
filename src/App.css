@@ -1,16 +1,12 @@
 :root {
-  --text-color: #707070;
-  --card-background: #F3F3F3;
+    --text-color: #707070;
+    --card-background: #F3F3F3;
 }
 
 * {
-  font-family: 'Montserrat', sans-serif;
-}
-
-h1 {
-  font-family: 'Montserrat Subrayada', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
-  background: #F9F9F9;
+    background: #F9F9F9;
 }
