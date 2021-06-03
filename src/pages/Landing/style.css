@@ -1,3 +1,7 @@
+* {
+    overflow-x: hidden;
+}
+
 #page-landing {
     width: 100vw;
 }
@@ -16,47 +20,79 @@
 }
 
 .content>div {
-    width: 33%;
-    flex: 1 1 30%;
+    width: 33vw;
+    flex: 1 1 20%;
+}
+
+#logo {
+    margin: 1.7rem 0 0 2rem;
+    align-self: start;
+    flex: 1 100%;
+}
+
+#logo>img {
+    width: 80px;
 }
 
 #title {
-    height: 197px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
+    overflow-x: visible;
+    flex: 1 100%;
 }
 
 #create {
-    font-size: 2.65rem;
+    font-size: 2rem;
 }
 
 #everything {
     font-family: 'Montserrat Subrayada', sans-serif;
-    font-size: 6.68rem;
+    font-size: 5rem;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000;
-    margin: 0 auto;
-}
-
-#logo {
-    margin: 2.5rem 0 0 3rem;
-    align-self: start;
-}
-
-#logo>img {
-    width: 88px;
-    height: 35px;
+    justify-content: center;
 }
 
 #portfolio-phone-1 {
     margin: 0 auto;
     flex-grow: 3;
     text-align: center;
+    flex: 1 1 60%;
+    overflow-x: visible;
 }
 
 #portfolio-phone-1>img {
-    width: 1234px;
-    margin: 0 auto;
+    width: 900px;
+}
+
+#social-links {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 20%;
+}
+
+#social-links>img {
+    width: 25px;
+    margin: 0.3rem;
+}
+
+@media (min-width: 1600px) {
+    #logo {
+        margin: 2.5rem 0 0 3rem;
+        align-self: start;
+    }
+    #logo>img {
+        width: 88px;
+    }
+    #create {
+        font-size: 2.65rem;
+    }
+    #everything {
+        font-size: 6.68rem;
+    }
+    #portfolio-phone-1>img {
+        width: 1234px;
+    }
 }
