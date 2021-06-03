@@ -67,15 +67,27 @@
     width: 900px;
 }
 
+#social-background {
+    width: 400px;
+    right: 0;
+    top: 60%;
+    left: 89%;
+    position: absolute;
+    z-index: -1;
+}
+
 #social-links {
     display: flex;
     flex-direction: column;
     flex: 1 1 20%;
+    flex-wrap: wrap;
+    margin-top: 6rem;
+    align-items: flex-end;
 }
 
-#social-links>img {
+.social-link-img {
     width: 25px;
-    margin: 0.3rem;
+    margin: 0.4rem 3rem;
 }
 
 @media (min-width: 1600px) {

@@ -7,6 +7,7 @@ import behanceWhite from '../../assets/behance-white.png'
 import githubWhite from '../../assets/github-white.png'
 import linkedinWhite from '../../assets/linkedin-white.png'
 import instaWhite from '../../assets/insta-logo-white.png'
+import socialBackground from '../../assets/social-background.png'
 
 function Landing() {
     return(
@@ -24,11 +25,12 @@ function Landing() {
                 <div id="portfolio-phone-1">
                     <img src={phone1} alt="" />
                 </div>
+                <img src={socialBackground} alt="" id="social-background"/>
                 <div id="social-links">
-                    <img src={behanceWhite} alt="" />
-                    <img src={githubWhite} alt="" />
-                    <img src={linkedinWhite} alt="" />
-                    <img src={instaWhite} alt="" />
+                    <img src={behanceWhite} alt="" className="social-link-img"/>
+                    <img src={githubWhite} alt="" className="social-link-img"/>
+                    <img src={linkedinWhite} alt="" className="social-link-img"/>
+                    <img src={instaWhite} alt="" className="social-link-img"/>
                 </div>
             </div>
         </div>
