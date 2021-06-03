@@ -27,10 +27,18 @@ function Landing() {
                 </div>
                 <img src={socialBackground} alt="" id="social-background"/>
                 <div id="social-links">
-                    <img src={behanceWhite} alt="" className="social-link-img"/>
-                    <img src={githubWhite} alt="" className="social-link-img"/>
-                    <img src={linkedinWhite} alt="" className="social-link-img"/>
-                    <img src={instaWhite} alt="" className="social-link-img"/>
+                    <a href="https://www.behance.net/lucianolima00">
+                        <img src={behanceWhite} alt="" className="social-link-img"/>
+                    </a>
+                    <a href="https://github.com/lucianolima00">
+                        <img src={githubWhite} alt="" className="social-link-img"/>
+                    </a>
+                    <a href="https://www.linkedin.com/in/lucianolima00">
+                        <img src={linkedinWhite} alt="" className="social-link-img"/>
+                    </a>
+                    <a href="https://www.instagram.com/luciano.lima00">
+                        <img src={instaWhite} alt="" className="social-link-img"/>
+                    </a>
                 </div>
             </div>
         </div>
