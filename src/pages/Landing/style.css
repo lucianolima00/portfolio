@@ -3,13 +3,23 @@
 }
 
 #page-landing {
-    width: 100vw;
+    width: 100%;
 }
 
 #background-middle {
+    background-image: linear-gradient(to bottom right, #178ac7, #07F64D);
     position: absolute;
-    margin: 45vh 0;
+    top: 90%;
+    margin: 15% 0;
     z-index: -1;
+    width: 100%;
+    padding: 8% 20px;
+    /* Added a percentage value for top/bottom padding to keep the wrapper inside of the parent */
+    -webkit-transform: skewY(35deg);
+    -moz-transform: skewY(35deg);
+    -ms-transform: skewY(35deg);
+    -o-transform: skewY(35deg);
+    transform: skewY(35deg);
 }
 
 .content {
@@ -20,7 +30,7 @@
 }
 
 .content>div {
-    width: 33vw;
+    width: 33%;
     flex: 1 1 20%;
 }
 
@@ -44,12 +54,12 @@
 }
 
 #create {
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 #everything {
     font-family: 'Montserrat Subrayada', sans-serif;
-    font-size: 5rem;
+    font-size: 4rem;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000;
     justify-content: center;
@@ -64,14 +74,13 @@
 }
 
 #portfolio-phone-1>img {
-    width: 900px;
+    width: 700px;
 }
 
 #social-background {
-    width: 400px;
-    right: 0;
-    top: 59vh;
-    left: 89vw;
+    width: 300px;
+    top: 65%;
+    left: 91%;
     position: absolute;
     z-index: -1;
 }
@@ -81,24 +90,24 @@
     flex-direction: column;
     flex: 1 1 20%;
     flex-wrap: wrap;
-    margin-top: 6.5rem;
+    margin-top: 17.6rem;
     align-items: flex-end;
 }
 
 .social-link-img {
-    width: 22px;
-    margin: 0.5rem 3.2rem;
+    width: 20px;
+    margin: 0.45rem 1rem;
 }
 
 @media (min-width: 1600px) {
     #page-landing {
-        width: 100vw;
+        width: 100%;
     }
     #background-middle {
         position: absolute;
-        margin: 45vh 0;
+        margin: 15% 0;
         z-index: -1;
-        width: 100vw;
+        width: 100%;
     }
     #logo {
         margin: 2.5rem 0 0 3rem;
@@ -118,22 +127,18 @@
     }
     #social-background {
         width: 400px;
-        right: 0;
-        top: 65vh;
-        left: 91vw;
-        position: absolute;
-        z-index: -1;
+        top: 70vh;
+        left: 91%;
     }
     #social-links {
         display: flex;
         flex-direction: column;
         flex: 1 1 20%;
         flex-wrap: wrap;
-        margin-top: 51.5vh;
+        margin-top: 56vh;
         align-items: flex-end;
     }
     .social-link-img {
         width: 22px;
-        margin: 0.5rem 3.2rem;
     }
 }

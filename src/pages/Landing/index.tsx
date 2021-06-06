@@ -12,7 +12,10 @@ import socialBackground from '../../assets/social-background.png'
 function Landing() {
     return(
         <div id='page-landing'>
-            <img src={backgroundMiddle} id='background-middle' alt=""/>
+            {/* <img src={backgroundMiddle} id='background-middle' alt=""/> */}
+            <div id="background-middle">
+                <div className="box"></div>
+            </div>
             <div className='content'>
                 <div id='logo'>
                     <img src={logo} alt='LIMA' />
@@ -27,16 +30,16 @@ function Landing() {
                 </div>
                 <img src={socialBackground} alt="" id="social-background"/>
                 <div id="social-links">
-                    <a href="https://www.behance.net/lucianolima00">
+                    <a href="https://www.behance.net/lucianolima00" target="_blank">
                         <img src={behanceWhite} alt="" className="social-link-img"/>
                     </a>
-                    <a href="https://github.com/lucianolima00">
+                    <a href="https://github.com/lucianolima00" target="_blank">
                         <img src={githubWhite} alt="" className="social-link-img"/>
                     </a>
-                    <a href="https://www.linkedin.com/in/lucianolima00">
+                    <a href="https://www.linkedin.com/in/lucianolima00" target="_blank">
                         <img src={linkedinWhite} alt="" className="social-link-img"/>
                     </a>
-                    <a href="https://www.instagram.com/luciano.lima00">
+                    <a href="https://www.instagram.com/luciano.lima00" target="_blank">
                         <img src={instaWhite} alt="" className="social-link-img"/>
                     </a>
                 </div>
