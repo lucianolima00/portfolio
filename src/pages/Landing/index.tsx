@@ -49,11 +49,11 @@ function Landing() {
                     <div id="social-background">
                     </div>
                     <div id="white-social-links">
-                        <a href="https://www.behance.net/lucianolima00" target="_blank" className="social-link">
-                            <img src={behanceWhite} alt=""/>
-                        </a>
                         <a href="https://github.com/lucianolima00" target="_blank" className="social-link">
                             <img src={githubWhite} alt=""/>
+                        </a>
+                        <a href="https://www.behance.net/lucianolima00" target="_blank" className="social-link">
+                            <img src={behanceWhite} alt=""/>
                         </a>
                         <a href="https://www.linkedin.com/in/lucianolima00" target="_blank" className="social-link">
                             <img src={linkedinWhite} alt=""/>
@@ -153,12 +153,12 @@ function Landing() {
                     </div>
                     <div className="topic-content">
                         <div id="black-social-links">
-                            <a href="https://www.behance.net/lucianolima00" target="_blank" className="social-link">
-                                <img src={behanceBlack} alt=""/>
-                                <p>LUCIANOLIMA00</p>
-                            </a>
                             <a href="https://github.com/lucianolima00" target="_blank" className="social-link">
                                 <img src={githubBlack} alt=""/>
+                                <p>LUCIANOLIMA00</p>
+                            </a>
+                            <a href="https://www.behance.net/lucianolima00" target="_blank" className="social-link">
+                                <img src={behanceBlack} alt=""/>
                                 <p>LUCIANOLIMA00</p>
                             </a>
                             <a href="https://www.linkedin.com/in/lucianolima00" target="_blank" className="social-link">
