@@ -15,6 +15,7 @@ import instaBlack from '../../assets/insta-logo.png'
 import backButton from '../../assets/back-button.png'
 import forwardButton from '../../assets/forward-button.png'
 import openOnGit from '../../assets/open-on-git.png'
+import cardOpen from '../../assets/card-open-button.png'
 
 var bgColors = { 
     "Purple": "#4F309B",
@@ -138,7 +139,9 @@ function Landing() {
                                     <p>PORTFOLIO WEB</p>
                                 </div>
                                 <div className="card-button">
-
+                                    <a href="#">
+                                        <img src={cardOpen} alt="" />
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -172,6 +175,12 @@ function Landing() {
                         </div>
                         <div id="portfolio-phone-3">
                             <img src={phone3} alt="" />
+                        </div>
+                        <div className="contact-input">
+                            <div className="contact-text">
+                                <input type="text" name="contact-textarea" id="contact-textarea" placeholder="MESSAGE"></input>
+                                <input type="email" name="contact-email" id="contact-email" placeholder="E-MAIL"></input>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -258,23 +258,35 @@
     
     .card-link {
         flex: 50%;
-    }
-    
-    .card-info {
-        margin: 0 0.5rem;
-    }
-    
-    .card-title>p {
-        color: #707070;
-    }
-    
-    .card-link {
         text-align: right;
         padding: 0.3rem 0.5rem 0 0;
     }
     
     .card-link>a>img {
         height: 40px;
+    }
+    
+    .card-info {
+        margin: 0 0.5rem;
+        display: flex;
+    }
+    
+    .card-title {
+        flex: 50%;
+    }
+    
+    .card-title>p {
+        color: #707070;
+    }
+    
+    .card-button {
+        flex: 50%;
+        align-self: center;
+        text-align: end;
+    }
+    
+    .card-button>a>img {
+        height: 45px;
     }
     
     #contact-title {
@@ -299,11 +311,13 @@
     
     #black-social-links>a {
         align-items: center;
+        margin: 0.5rem 0;
     }
     
     #black-social-links>a>p {
         font-weight: bold;
         padding-right: 0.1rem;
+        margin: auto;
     }
     
     #black-social-links>a>img {
