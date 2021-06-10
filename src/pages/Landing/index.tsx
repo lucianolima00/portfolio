@@ -16,6 +16,7 @@ import backButton from '../../assets/back-button.png'
 import forwardButton from '../../assets/forward-button.png'
 import openOnGit from '../../assets/open-on-git.png'
 import cardOpen from '../../assets/card-open-button.png'
+import sendButton from '../../assets/send-button.png'
 
 var bgColors = { 
     "Purple": "#4F309B",
@@ -178,8 +179,11 @@ function Landing() {
                         </div>
                         <div className="contact-input">
                             <div className="contact-text">
-                                <input type="text" name="contact-textarea" id="contact-textarea" placeholder="MESSAGE"></input>
+                                <textarea name="contact-textarea" id="contact-textarea" rows={15} cols={35} placeholder="MESSAGE"></textarea>
                                 <input type="email" name="contact-email" id="contact-email" placeholder="E-MAIL"></input>
+                            </div>
+                            <div className="contact-submit">
+                                <img src={sendButton} alt="" />
                             </div>
                         </div>
                     </div>

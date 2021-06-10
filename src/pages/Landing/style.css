@@ -296,17 +296,20 @@
     #portfolio-phone-3 {
         flex: 1 1 50%;
         overflow: visible;
+        position: absolute;
+        left: 15%;
     }
     
     #portfolio-phone-3>img {
         width: 700px;
-        margin-top: 2rem;
+        margin-bottom: 3rem;
     }
     
     #black-social-links {
         display: flex;
         flex-direction: column;
         align-self: flex-end;
+        flex: 50%;
     }
     
     #black-social-links>a {
@@ -317,11 +320,43 @@
     #black-social-links>a>p {
         font-weight: bold;
         padding-right: 0.1rem;
-        margin: auto;
+        margin: 0;
     }
     
     #black-social-links>a>img {
         margin: 0 0.5rem;
+    }
+    
+    .contact-text {
+        display: flex;
+        flex-direction: column;
+        flex: 50%;
+        margin-top: 2rem;
+    }
+    
+    #contact-textarea {
+        resize: none;
+        border: #F3F3F3;
+        border-radius: 15px;
+        box-shadow: -2px 3px 5px rgba(0, 0, 0, 0.166);
+        margin: 1rem;
+        padding: 0.8rem;
+    }
+    
+    #contact-email {
+        border: #F3F3F3;
+        border-radius: 10px;
+        box-shadow: -2px 3px 5px rgba(0, 0, 0, 0.166);
+        margin: 1rem;
+        padding: 0.8rem;
+    }
+    
+    .contact-submit {
+        text-align: center;
+    }
+    
+    .contact-submit>img {
+        height: 50px;
     }
     
     @media (min-width: 1600px) {
