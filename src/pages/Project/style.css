@@ -2,30 +2,29 @@
         overflow-x: hidden;
     }
     
-    #page-landing {
+    #page-project {
         width: 100%;
         height: 100%;
-        max-height: 200%;
         overflow-y: hidden;
     }
     
-    #background-middle {
+    #background-middle-right {
         background-image: linear-gradient(to bottom right, #178ac7, #07F64D);
+        top: 0;
         position: absolute;
-        top: 100%;
-        margin: 20% 0;
+        margin: 0;
         z-index: -1;
         width: 100%;
         padding: 8% 20px;
         /* Added a percentage value for top/bottom padding to keep the wrapper inside of the parent */
-        -webkit-transform: skewY(40deg);
-        -moz-transform: skewY(40deg);
-        -ms-transform: skewY(40deg);
-        -o-transform: skewY(40deg);
-        transform: skewY(40deg);
+        -webkit-transform: skewY(-40deg);
+        -moz-transform: skewY(-40deg);
+        -ms-transform: skewY(-40deg);
+        -o-transform: skewY(-40deg);
+        transform: skewY(-40deg);
     }
     
-    #header {
+    #project {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -42,7 +41,7 @@
         width: 80px;
     }
     
-    #header-phrase {
+    #project-phrase {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -65,76 +64,6 @@
         justify-content: center;
     }
     
-    #portfolio-phone-1 {
-        text-align: center;
-        overflow-x: visible;
-        position: absolute;
-        width: 100%;
-        top: 23.6%;
-    }
-    
-    #portfolio-phone-1>img {
-        width: 630px;
-    }
-    
-    #social-background {
-        background-image: linear-gradient(to bottom left, #178ac7, #07F64D);
-        border-radius: 25px;
-        position: absolute;
-        width: 300px;
-        top: 80%;
-        left: 92%;
-        z-index: -1;
-        padding: 7% 20px;
-        -webkit-transform: rotate(40deg);
-        -moz-transform: rotate(40deg);
-        -ms-transform: rotate(40deg);
-        -o-transform: rotate(40deg);
-        transform: rotate(40deg);
-    }
-    
-    #white-social-links {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        flex: 1 1 20%;
-        margin-top: 21.5rem;
-        align-items: flex-end;
-        z-index: 0;
-    }
-    
-    .social-link {
-        display: flex;
-    }
-    
-    .social-link>img {
-        width: 18px;
-        height: 18px;
-        margin: 0.35rem 1.3rem;
-    }
-    
-    .social-link>p {
-        color: #000;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: #000;
-    }
-    
-    a:link {
-        text-decoration: none;
-    }
-    
-    a:visited {
-        text-decoration: none;
-    }
-    
-    .topic {
-        margin: 5rem 2.5rem 2rem 2.5rem;
-        flex: 1 1 100%;
-        display: flex;
-        flex-wrap: wrap;
-        overflow-y: hidden;
-    }
-    
     .title {
         flex: 1 1 100%;
         font-size: 2.5rem;
@@ -146,18 +75,7 @@
         flex: 1 1 100%;
         display: flex;
     }
-    
-    #portfolio-phone-2 {
-        flex: 1 1 50%;
-        overflow: visible;
-    }
-    
-    #portfolio-phone-2>img {
-        width: 450px;
-        margin-top: 5rem;
-        margin-left: 3rem;
-    }
-    
+
     #knowledge {
         flex: 1 1 50%;
     }
@@ -200,16 +118,6 @@
         height: 72px;
         z-index: 1;
     }
-    
-    #interactive-buttons {
-        display: flex;
-    }
-    
-    .arrow-button>img {
-        width: 60px;
-        margin: 0 0.5rem;
-    }
-
     .project-topic {
         height: 600px;
         margin-right: 0;
@@ -221,43 +129,6 @@
         overflow-y: auto;
     }
 
-    .card {
-        padding: 1rem;
-        width: 500px;
-        writing-mode: horizontal-tb;
-        margin: 2.5rem 5rem 2.5rem 0;
-    }
-    
-    .card-body {
-        background-color: #F3F3F3;
-        border-radius: 30px;
-        box-shadow: -2px 3px 5px rgba(0, 0, 0, 0.166);
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 0.5rem;
-    }
-    
-    .card-picture {
-        background: #FFF;
-        border-radius: 30px;
-        width: 94%;
-        height: 84%;
-        box-shadow: -2px 3px 5px rgba(0, 0, 0, 0.166);
-        margin-top: 3%;
-    }
-    
-    .card-content {
-        display: flex;
-        width: 94%;
-    }
-    
-    .card-tecnologies {
-        display: flex;
-        flex: 50%;
-        padding: 0.3rem 1rem 0.3rem 0;
-    }
     
     .tech-dot {
         border-radius: 50%;
@@ -275,123 +146,18 @@
     .tech-name>p {
         color: #707070;
     }
-    
-    .card-link {
-        flex: 50%;
-        text-align: right;
-        padding: 0.3rem 0.5rem 0 0;
-    }
-    
-    .card-link>a>img {
-        height: 40px;
-    }
-    
-    .card-info {
-        margin: 0 0.5rem;
-        display: flex;
-    }
-    
-    .card-title {
-        flex: 50%;
-    }
-    
-    .card-title>p {
-        color: #707070;
-    }
-    
-    .card-button {
-        flex: 50%;
-        align-self: center;
-        text-align: end;
-    }
-    
-    .card-button>a>img {
-        height: 45px;
-    }
 
-    #contact-title {
-        text-align: end;
-    }
-    
-    #portfolio-phone-3 {
-        flex: 1 1 50%;
-        overflow: visible;
-        position: absolute;
-        left: 28%;
-        top: 265%;
-    }
-    
-    #portfolio-phone-3>img {
-        width: 800px;
-        margin-bottom: 3rem;
-    }
-    
-    #black-social-links {
-        display: flex;
-        flex-direction: column;
-        align-self: flex-end;
-        flex: 50%;
-    }
-    
-    #black-social-links>a {
-        align-items: center;
-        align-self: flex-end;
-        margin: 0.5rem 0;
-    }
-    
-    #black-social-links>a>p {
-        font-weight: bold;
-        padding-right: 0.1rem;
-        margin: 0;
-    }
-    
-    #black-social-links>a>img {
-        margin: 0 0.5rem;
-    }
-    
-    .contact-text {
-        display: flex;
-        flex-direction: column;
-        flex: 50%;
-        margin-top: 2rem;
-    }
-    
-    #contact-textarea {
-        resize: none;
-        border: #F3F3F3;
-        border-radius: 15px;
-        box-shadow: -2px 3px 5px rgba(0, 0, 0, 0.166);
-        margin: 1rem;
-        padding: 0.8rem;
-    }
-    
-    #contact-email {
-        border: #F3F3F3;
-        border-radius: 10px;
-        box-shadow: -2px 3px 5px rgba(0, 0, 0, 0.166);
-        margin: 1rem;
-        padding: 0.8rem;
-    }
-    
-    .contact-submit {
-        text-align: center;
-    }
-    
-    .contact-submit>img {
-        height: 50px;
-    }
-    
-    #background-bottom-container {
+    #background-bottom-container-right {
         position: absolute;
         width: 100%;
         left: 50%;
-        top: 240%;
+        top: 10%;
         overflow-y: hidden;
         height: 90%;
         z-index: -1;
     }
     
-    #background-bottom {
+    #background-bottom-right {
         background-image: linear-gradient(to bottom right, #178ac7, #07F64D);
         margin: 20% 0;
         padding: 8% 20px;

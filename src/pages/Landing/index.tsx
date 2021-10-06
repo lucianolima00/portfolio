@@ -1,5 +1,6 @@
 import './style.css';
 import CSS from 'csstype';
+import { Link } from "react-router-dom";
 
 import logo from '../../assets/lima-logo-black.png';
 import phone1 from '../../assets/iphone-portifolio-1.png';
@@ -43,11 +44,11 @@ function Landing() {
 
                 {/* LANDING */}
 
-                <div id="landing">
-                    <div id='logo'>
+                <div id="header">
+                    <Link id='logo' to="/">
                         <img src={logo} alt='LIMA' />
-                    </div>
-                    <div id='landing-phrase'>
+                    </Link>
+                    <div id='header-phrase'>
                         <span id="create">CREATE</span>
                         <span id="everything">EVERYTHING</span>
                     </div>
@@ -114,9 +115,9 @@ function Landing() {
                                     <p>PORTFOLIO WEB</p>
                                 </div>
                                 <div className="card-button">
-                                    <a href="#">
+                                    <Link to="/project">
                                         <img src={cardOpen} alt="" />
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -258,13 +259,15 @@ function Landing() {
                     </div>
                     <div className="topic-content">
                         <div className="contact-input">
-                            <div className="contact-text">
-                                <textarea name="contact-textarea" id="contact-textarea" rows={15} cols={35} placeholder="MESSAGE"></textarea>
-                                <input type="email" name="contact-email" id="contact-email" placeholder="E-MAIL"></input>
-                            </div>
-                            <div className="contact-submit">
-                                <img src={sendButton} alt="" />
-                            </div>
+                            <form >
+                                <div className="contact-text">
+                                        <textarea name="contact-textarea" id="contact-textarea" rows={15} cols={35} placeholder="MESSAGE"></textarea>
+                                        <input type="email" name="contact-email" id="contact-email" placeholder="E-MAIL"/>
+                                </div>
+                                <div className="contact-submit">
+                                    <img src={sendButton} alt="" />
+                                </div>
+                            </form>
                         </div>
                         <div id="portfolio-phone-3">
                             <img src={phone3} alt="" />
