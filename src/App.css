@@ -14,3 +14,11 @@
 body {
     background: #F9F9F9;
 }
+
+#copyright-container {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+#copyright-container > span {
+    font-size: 1pt;
+}

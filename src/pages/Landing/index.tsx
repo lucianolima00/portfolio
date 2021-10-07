@@ -293,6 +293,9 @@ function Landing() {
                     </div>
                 </div>
             </div>
+            <div id="copyright-container">
+                <b id="copyright">COPYRIGHT © 2021 LIMA</b>
+            </div>
             <div id="background-bottom-container">
                 <div id="background-bottom"></div>
             </div>
