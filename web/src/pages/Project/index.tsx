@@ -1,6 +1,8 @@
 import './style.css';
 import CSS from 'csstype';
 import { Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import api from "../../services/api";
 
 import logo from '../../assets/lima-logo-black.png';
 import openOnGit from '../../assets/open-on-git.png'
@@ -9,17 +11,35 @@ import arrowButton from '../../assets/arrow-button.svg'
 import {useRef} from "react";
 
 var bgColors = { 
-    "Purple": "#4F309B",
-    "Blue": "#04DAF2",
-    "Green": "#8CC152",
-    "Orange": "#EC6C3C",
-    "Yellow": "#ECE03C",
+    "PHP": "#4F309B",
+    "Flutter": "#04DAF2",
+    "NodeJS": "#8CC152",
+    "Dart": "#EC6C3C",
+    "Javascript": "#ECE03C",
 };
 
 const projectName = "WEB PORTFOLIO";
 
-function Project() {
+const Project = () => {
     const ref = useRef<HTMLDivElement>(document.createElement("div"));
+
+    interface Project {
+        id: number;
+        name: string;
+        image_url: string;
+        description: string;
+        first_tech: string;
+        second_tech: string;
+    }
+
+    const [project, setProject] = useState<Project>();
+
+    useEffect(() => {
+        api.get('project').then(response => {
+            setProject(response.data)
+            console.log(response)
+        })
+    }, [])
 
     const scroll = (scrollOffset = 0) => {
         ref.current.scrollLeft += scrollOffset;
@@ -64,11 +84,11 @@ function Project() {
                         </div>
                         <div className="project-info">
                             <div className="project-tecnologies">
-                                <div className="tech-dot" style={{backgroundColor:bgColors.Purple}}></div>
+                                <div className="tech-dot" style={{backgroundColor:bgColors.PHP}}></div>
                                 <div className="tech-name">
                                     <p>PHP</p>
                                 </div>
-                                <div className="tech-dot" style={{backgroundColor:bgColors.Yellow}}></div>
+                                <div className="tech-dot" style={{backgroundColor:bgColors.Javascript}}></div>
                                 <div className="tech-name">
                                     <p>Javascript</p>
                                 </div>
