@@ -1,5 +1,9 @@
 # CHANGES
 
+## 0.0.4
+
+Create basic backend server ([@luciano.lima00](https://github.com/lucianolima00))
+
 ## 0.0.3
 
 Change directory to web and server ([@luciano.lima00](https://github.com/lucianolima00))
