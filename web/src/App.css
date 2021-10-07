@@ -1,0 +1,24 @@
+:root {
+    --text-color: #707070;
+    --card-background: #F3F3F3;
+    --background-color-1: #178ac7;
+    --background-color-2: #8db96f;
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    left: 0;
+    user-select: none;
+}
+
+body {
+    background: #F9F9F9;
+}
+
+#copyright-container {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+#copyright-container > span {
+    font-size: 1pt;
+}
