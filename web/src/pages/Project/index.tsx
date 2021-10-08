@@ -1,6 +1,5 @@
 import './style.css';
-import CSS from 'csstype';
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import api from "../../services/api";
 
@@ -21,25 +20,33 @@ var bgColors = {
 const projectName = "WEB PORTFOLIO";
 
 const Project = () => {
-    const ref = useRef<HTMLDivElement>(document.createElement("div"));
-
     interface Project {
         id: number;
         name: string;
-        image_url: string;
+        image: string;
         description: string;
-        first_tech: string;
-        second_tech: string;
+        first_tech_name: string;
+        first_tech_color: string;
+        second_tech_name: string;
+        second_tech_color: string;
     }
 
-    const [project, setProject] = useState<Project>();
+    let id: any;
+    ({id} = useParams());
+
+    console.log(id);
+
+    const [project, setProjects] = useState<Project>();
 
     useEffect(() => {
-        api.get('project').then(response => {
-            setProject(response.data)
-            console.log(response)
+        api.get(`project/${id}`).then(response => {
+            setProjects(response.data);
         })
-    }, [])
+    }, []);
+
+    console.log(project);
+
+    const ref = useRef<HTMLDivElement>(document.createElement("div"));
 
     const scroll = (scrollOffset = 0) => {
         ref.current.scrollLeft += scrollOffset;
@@ -53,54 +60,56 @@ const Project = () => {
 
                 {/* HEADER */}
 
-                <div id="header">
-                    <div id="header-logo-back">
-                        <Link id='logo' to="/">
-                            <img src={logo} alt='LIMA' />
-                        </Link>
-                        <Link id='back-home' to="/">
-                            <img src={arrowButton} alt='' />
-                            <b>BACK TO HOME</b>
-                        </Link>
-                    </div>
-                    <div id='header-phrase'>
-                        <span id="create">CREATE</span>
-                        <span id="everything">EVERYTHING</span>
-                    </div>
+            <div id="header">
+                <div id="header-logo-back">
+                    <Link id='logo' to="/">
+                        <img src={logo} alt='LIMA' />
+                    </Link>
+                    <Link id='back-home' to="/">
+                        <img src={arrowButton} alt='' />
+                        <b>BACK TO HOME</b>
+                    </Link>
                 </div>
+                <div id='header-phrase'>
+                    <span id="create">CREATE</span>
+                    <span id="everything">EVERYTHING</span>
+                </div>
+            </div>
 
-                {/* PROJECTS */}
+            {/* PROJECTS */}
 
-                <div className="project">
-                    <div className="image">
-                        <img src={projectImage} alt={projectName} />
-                    </div>
-                    <div id="content">
-                        <div className="project-title">
-                            <p>MOBILE PORTFOLIO</p>
+                {project ? () => (
+                    <div className="project">
+                        <div className="image">
+                            <img src={project.image} alt={project.name} />
                         </div>
-                        <div className="project-description">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis, ipsum in eleifend elementum, leo turpis gravida orci, id ullamcorper sem nunc eget nisl. Etiam non consequat libero. Nulla facilisi. Proin odio nulla, dapibus et imperdiet sed, maximus et nunc. Curabitur viverra gravida leo, vel egestas magna vehicula nec. Quisque ac libero sagittis, tempor nisi a, venenatis nunc. Morbi vehicula fringilla consectetur. Quisque tellus odio, pretium in ipsum eget, efficitur varius mi</p>
-                        </div>
-                        <div className="project-info">
-                            <div className="project-tecnologies">
-                                <div className="tech-dot" style={{backgroundColor:bgColors.PHP}}></div>
-                                <div className="tech-name">
-                                    <p>PHP</p>
+                        <div id="content">
+                            <div className="project-title">
+                                <p>{project.name}</p>
+                            </div>
+                            <div className="project-description">
+                                <p>{project.description}</p>
+                            </div>
+                            <div className="project-info">
+                                <div className="project-tecnologies">
+                                    <div className="tech-dot" style={{backgroundColor: project.first_tech_color}}/>
+                                    <div className="tech-name">
+                                        <p>{project.first_tech_name}</p>
+                                    </div>
+                                    <div className="tech-dot" style={{backgroundColor: project.second_tech_color}}/>
+                                    <div className="tech-name">
+                                        <p>{project.second_tech_name}</p>
+                                    </div>
                                 </div>
-                                <div className="tech-dot" style={{backgroundColor:bgColors.Javascript}}></div>
-                                <div className="tech-name">
-                                    <p>Javascript</p>
+                                <div className="project-link">
+                                    <a href="https://github.com/lucianolima00">
+                                        <img src={openOnGit} alt="" />
+                                    </a>
                                 </div>
                             </div>
-                            <div className="project-link">
-                                <a href="https://github.com/lucianolima00">
-                                    <img src={openOnGit} alt="" />
-                                </a>
-                            </div>
                         </div>
                     </div>
-                </div>
+                ): ''}
             </div>
             <div id="copyright-container">
                 <b id="copyright">COPYRIGHT © 2021 LIMA</b>

@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React, {useEffect, useState} from "react";
 import './style.css';
-import CSS from 'csstype';
 import { Link } from "react-router-dom";
 
 import api from '../../services/api';
@@ -24,19 +23,23 @@ import cardOpen from '../../assets/card-open-button.png'
 import sendButton from '../../assets/send-button.png'
 import {useRef} from "react";
 
-var bgColors = { 
-    "Purple": "#4F309B",
-    "Blue": "#04DAF2",
-    "Green": "#8CC152",
-    "Orange": "#EC6C3C",
-    "Yellow": "#ECE03C",
-};
+const Landing = () => {
 
-function Landing() {
+    interface Project {
+        id: number;
+        name: string;
+        image: string;
+        first_tech_name: string;
+        first_tech_color: string;
+        second_tech_name: string;
+        second_tech_color: string;
+    }
+
+    const [projects, setProjects] = useState<Project[]>([]);
 
     useEffect(() => {
-        api.get('items').then(response => {
-            console.log(response)
+        api.get('/').then(response => {
+            setProjects(response.data);
         })
     }, [])
 
@@ -62,12 +65,12 @@ function Landing() {
                         <span id="create">CREATE</span>
                         <span id="everything">EVERYTHING</span>
                     </div>
-                    <div></div>
+                    <div/>
                     <div id="portfolio-phone-1">
                         <img src={phone1} alt="" />
                     </div>
 
-                    <div id="social-background"></div>
+                    <div id="social-background"/>
                     <div id="white-social-links">
                         <a href="https://github.com/lucianolima00" target="_blank" className="social-link">
                             <img src={githubWhite} alt=""/>
@@ -99,134 +102,42 @@ function Landing() {
                         </div>
                     </div>
                     <div id="project-content" ref={ref!}>
-                        <div className="card">
-                            <div className="card-body">
-                                <div className="card-picture"></div>
-                                <div className="card-content">
-                                    <div className="card-tecnologies">
-                                        <div className="tech-dot" style={{backgroundColor:bgColors.Purple}}></div>
-                                        <div className="tech-name">
-                                            <p>PHP</p>
+                        {projects.map(project => (
+                            <div className="card" key={project.id}>
+                                <div className="card-body">
+                                    <div className="card-picture">
+                                        <img src={project.image} alt={project.name}/>
+                                    </div>
+                                    <div className="card-content">
+                                        <div className="card-technologies">
+                                            <div className="tech-dot" style={{backgroundColor: project.first_tech_color}}/>
+                                            <div className="tech-name">
+                                                <p>{project.first_tech_name}</p>
+                                            </div>
+                                            <div className="tech-dot" style={{backgroundColor: project.second_tech_color}}/>
+                                            <div className="tech-name">
+                                                <p>{project.second_tech_name}</p>
+                                            </div>
                                         </div>
-                                        <div className="tech-dot" style={{backgroundColor:bgColors.Yellow}}></div>
-                                        <div className="tech-name">
-                                            <p>Javascript</p>
+                                        <div className="card-link">
+                                            <a href="https://github.com/lucianolima00">
+                                                <img src={openOnGit} alt="" />
+                                            </a>
                                         </div>
                                     </div>
-                                    <div className="card-link">
-                                        <a href="https://github.com/lucianolima00">
-                                            <img src={openOnGit} alt="" />
-                                        </a>
+                                </div>
+                                <div className="card-info">
+                                    <div className="card-title">
+                                        <p>{project.name}</p>
                                     </div>
-                                </div>
-                            </div>
-                            <div className="card-info">
-                                <div className="card-title">
-                                    <p>PORTFOLIO WEB</p>
-                                </div>
-                                <div className="card-button">
-                                    <Link to="/project">
-                                        <img src={cardOpen} alt="" />
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="card">
-                            <div className="card-body">
-                                <div className="card-picture"></div>
-                                <div className="card-content">
-                                    <div className="card-tecnologies">
-                                        <div className="tech-dot" style={{backgroundColor:bgColors.Purple}}></div>
-                                        <div className="tech-name">
-                                            <p>PHP</p>
-                                        </div>
-                                        <div className="tech-dot" style={{backgroundColor:bgColors.Yellow}}></div>
-                                        <div className="tech-name">
-                                            <p>Javascript</p>
-                                        </div>
-                                    </div>
-                                    <div className="card-link">
-                                        <a href="https://github.com/lucianolima00">
-                                            <img src={openOnGit} alt="" />
-                                        </a>
+                                    <div className="card-button">
+                                        <Link to={`project/${project.id}`}>
+                                            <img src={cardOpen} alt="" />
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
-                            <div className="card-info">
-                                <div className="card-title">
-                                    <p>PORTFOLIO WEB</p>
-                                </div>
-                                <div className="card-button">
-                                    <a href="#">
-                                        <img src={cardOpen} alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="card">
-                            <div className="card-body">
-                                <div className="card-picture"></div>
-                                <div className="card-content">
-                                    <div className="card-tecnologies">
-                                        <div className="tech-dot" style={{backgroundColor:bgColors.Purple}}></div>
-                                        <div className="tech-name">
-                                            <p>PHP</p>
-                                        </div>
-                                        <div className="tech-dot" style={{backgroundColor:bgColors.Yellow}}></div>
-                                        <div className="tech-name">
-                                            <p>Javascript</p>
-                                        </div>
-                                    </div>
-                                    <div className="card-link">
-                                        <a href="https://github.com/lucianolima00">
-                                            <img src={openOnGit} alt="" />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="card-info">
-                                <div className="card-title">
-                                    <p>PORTFOLIO WEB</p>
-                                </div>
-                                <div className="card-button">
-                                    <a href="#">
-                                        <img src={cardOpen} alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="card">
-                            <div className="card-body">
-                                <div className="card-picture"></div>
-                                <div className="card-content">
-                                    <div className="card-tecnologies">
-                                        <div className="tech-dot" style={{backgroundColor:bgColors.Purple}}></div>
-                                        <div className="tech-name">
-                                            <p>PHP</p>
-                                        </div>
-                                        <div className="tech-dot" style={{backgroundColor:bgColors.Yellow}}></div>
-                                        <div className="tech-name">
-                                            <p>Javascript</p>
-                                        </div>
-                                    </div>
-                                    <div className="card-link">
-                                        <a href="https://github.com/lucianolima00">
-                                            <img src={openOnGit} alt="" />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="card-info">
-                                <div className="card-title">
-                                    <p>PORTFOLIO WEB</p>
-                                </div>
-                                <div className="card-button">
-                                    <a href="#">
-                                        <img src={cardOpen} alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
 
@@ -271,7 +182,7 @@ function Landing() {
                         <div className="contact-input">
                             <form >
                                 <div className="contact-text">
-                                        <textarea name="contact-textarea" id="contact-textarea" rows={15} cols={35} placeholder="MESSAGE"></textarea>
+                                        <textarea name="contact-textarea" id="contact-textarea" rows={15} cols={35} placeholder="MESSAGE"/>
                                         <input type="email" name="contact-email" id="contact-email" placeholder="E-MAIL"/>
                                 </div>
                                 <div className="contact-submit">
@@ -307,7 +218,7 @@ function Landing() {
                 <b id="copyright">COPYRIGHT © 2021 LIMA</b>
             </div>
             <div id="background-bottom-container">
-                <div id="background-bottom"></div>
+                <div id="background-bottom"/>
             </div>
         </div>
     );
