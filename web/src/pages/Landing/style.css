@@ -31,11 +31,14 @@
         align-items: center;
         justify-content: center;
     }
+
+    #logo-container {
+        margin: 1.7rem 0 0 2rem;
+        flex: 1 100%;
+    }
     
     #logo {
-        margin: 1.7rem 0 0 2rem;
         align-self: start;
-        flex: 1 100%;
     }
     
     #logo>img {
@@ -219,13 +222,14 @@
         writing-mode: vertical-lr;
         scroll-behavior: smooth;
         overflow-y: auto;
+        margin: 2rem 0;
     }
 
     .card {
         padding: 1rem;
         width: 500px;
         writing-mode: horizontal-tb;
-        margin: 2.5rem 5rem 2.5rem 0;
+        margin: 0 5rem 0 0;
     }
     
     .card-body {
@@ -269,12 +273,11 @@
         width: 15px;
         height: 15px;
         align-self: center;
-        margin-left: 1rem;
     }
     
     .tech-name {
         font-size: 9pt;
-        margin-left: 0.3rem;
+        margin: 0 1rem 0 0.3rem;
     }
     
     .tech-name>p {
@@ -323,7 +326,7 @@
         overflow: visible;
         position: absolute;
         left: 28%;
-        top: 265%;
+        top: 270%;
     }
     
     #portfolio-phone-3>img {
@@ -335,6 +338,7 @@
         display: flex;
         flex-direction: column;
         align-self: flex-end;
+        margin-bottom: 3rem;
         flex: 50%;
     }
     
@@ -360,10 +364,14 @@
         flex: 50%;
         margin-top: 2rem;
     }
-    
+
+    #contact-content {
+        margin-top: 5rem;
+    }
+
     #contact-textarea {
         resize: none;
-        border: #F3F3F3;
+        border: #969595;
         border-radius: 15px;
         box-shadow: -2px 3px 5px rgba(0, 0, 0, 0.166);
         margin: 1rem;
@@ -390,7 +398,7 @@
         position: absolute;
         width: 100%;
         left: 50%;
-        top: 242%;
+        top: 256%;
         overflow-y: hidden;
         height: 90%;
         z-index: -1;
@@ -409,7 +417,7 @@
     }
     
     @media (min-width: 1600px) {
-        #logo {
+        #logo-container {
             margin: 2.5rem 0 0 3rem;
         }
         #logo>img {
@@ -432,7 +440,7 @@
             padding: 7.5% 20px;
         }
         #white-social-links {
-            margin-top: 31.5rem;
+            margin-top: 33rem;
         }
         .social-link>img {
             width: 22px;
@@ -441,6 +449,9 @@
         }
         #title {
             font-size: 3.5rem;
+        }
+        #project-content {
+            height: 500px;
         }
         #portfolio-phone-2 {
             flex: 1 1 50%;
@@ -501,11 +512,10 @@
             width: 15px;
             height: 15px;
             align-self: center;
-            margin-left: 1rem;
         }
         .tech-name {
             font-size: 9pt;
-            margin-left: 0.3rem;
+            margin: 0 1rem 0 0.3rem;
         }
         .tech-name>p {
             color: #707070;

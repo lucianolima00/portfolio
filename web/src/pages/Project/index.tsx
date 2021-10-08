@@ -19,7 +19,7 @@ var bgColors = {
 
 const projectName = "WEB PORTFOLIO";
 
-const Project = () => {
+const ProjectView = () => {
     interface Project {
         id: number;
         name: string;
@@ -36,11 +36,11 @@ const Project = () => {
 
     console.log(id);
 
-    const [project, setProjects] = useState<Project>();
+    const [project, setProject] = useState<Project>();
 
     useEffect(() => {
-        api.get(`project/${id}`).then(response => {
-            setProjects(response.data);
+        api.get(`/project/${id}`).then(response => {
+            setProject(response.data);
         })
     }, []);
 
@@ -60,26 +60,28 @@ const Project = () => {
 
                 {/* HEADER */}
 
-            <div id="header">
-                <div id="header-logo-back">
-                    <Link id='logo' to="/">
-                        <img src={logo} alt='LIMA' />
-                    </Link>
-                    <Link id='back-home' to="/">
-                        <img src={arrowButton} alt='' />
-                        <b>BACK TO HOME</b>
-                    </Link>
+                <div id="header">
+                    <div id="header-logo-back">
+                        <div id="logo-container">
+                            <Link id='logo' to="/">
+                                <img src={logo} alt='LIMA' />
+                            </Link>
+                        </div>
+                        <Link id='back-home' to="/">
+                            <img src={arrowButton} alt='' />
+                            <b>BACK TO HOME</b>
+                        </Link>
+                    </div>
+                    <div id='header-phrase'>
+                        <span id="create">CREATE</span>
+                        <span id="everything">EVERYTHING</span>
+                    </div>
                 </div>
-                <div id='header-phrase'>
-                    <span id="create">CREATE</span>
-                    <span id="everything">EVERYTHING</span>
-                </div>
-            </div>
 
-            {/* PROJECTS */}
+                {/* PROJECTS */}
 
-                {project ? () => (
-                    <div className="project">
+                {
+                    project ? (<div className="project">
                         <div className="image">
                             <img src={project.image} alt={project.name} />
                         </div>
@@ -108,17 +110,18 @@ const Project = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                ): ''}
-            </div>
-            <div id="copyright-container">
-                <b id="copyright">COPYRIGHT © 2021 LIMA</b>
-            </div>
-            <div id="background-bottom-container-right">
-                <div id="background-bottom-right"></div>
+                    </div>) : ""
+                }
+
+                <div id="copyright-container">
+                    <b id="copyright">COPYRIGHT © 2021 LIMA</b>
+                </div>
+                <div id="background-bottom-container-right">
+                    <div id="background-bottom-right"/>
+                </div>
             </div>
         </div>
     );
 }
 
-export default Project;
+export default ProjectView;

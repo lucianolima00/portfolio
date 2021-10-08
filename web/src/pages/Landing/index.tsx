@@ -58,9 +58,11 @@ const Landing = () => {
                 {/* LANDING */}
 
                 <div id="header">
-                    <Link id='logo' to="/">
-                        <img src={logo} alt='LIMA' />
-                    </Link>
+                    <div id="logo-container">
+                        <Link id='logo' to="/">
+                            <img src={logo} alt='LIMA' />
+                        </Link>
+                    </div>
                     <div id='header-phrase'>
                         <span id="create">CREATE</span>
                         <span id="everything">EVERYTHING</span>
@@ -72,16 +74,16 @@ const Landing = () => {
 
                     <div id="social-background"/>
                     <div id="white-social-links">
-                        <a href="https://github.com/lucianolima00" target="_blank" className="social-link">
+                        <a href="https://github.com/lucianolima00" target="_blank" rel="noreferrer" className="social-link">
                             <img src={githubWhite} alt=""/>
                         </a>
-                        <a href="https://www.behance.net/lucianolima00" target="_blank" className="social-link">
+                        <a href="https://www.behance.net/lucianolima00" target="_blank" rel="noreferrer" className="social-link">
                             <img src={behanceWhite} alt=""/>
                         </a>
-                        <a href="https://www.linkedin.com/in/lucianolima00" target="_blank" className="social-link">
+                        <a href="https://www.linkedin.com/in/lucianolima00" target="_blank" rel="noreferrer" className="social-link">
                             <img src={linkedinWhite} alt=""/>
                         </a>
-                        <a href="https://www.instagram.com/luciano.lima00" target="_blank" className="social-link">
+                        <a href="https://www.instagram.com/luciano.lima00" target="_blank" rel="noreferrer" className="social-link">
                             <img src={instaWhite} alt=""/>
                         </a>
                     </div>
@@ -178,11 +180,11 @@ const Landing = () => {
                     <div className="topic-header">
                         <span className="title">CONTACT</span>
                     </div>
-                    <div className="topic-content">
+                    <div className="topic-content" id="contact-content">
                         <div className="contact-input">
                             <form >
                                 <div className="contact-text">
-                                        <textarea name="contact-textarea" id="contact-textarea" rows={15} cols={35} placeholder="MESSAGE"/>
+                                        <textarea name="contact-textarea" id="contact-textarea" rows={16} cols={40} placeholder="MESSAGE"/>
                                         <input type="email" name="contact-email" id="contact-email" placeholder="E-MAIL"/>
                                 </div>
                                 <div className="contact-submit">
@@ -194,19 +196,19 @@ const Landing = () => {
                             <img src={phone3} alt="" />
                         </div>
                         <div id="black-social-links">
-                            <a href="https://github.com/lucianolima00" target="_blank" className="social-link">
+                            <a href="https://github.com/lucianolima00" target="_blank" rel="noreferrer" className="social-link">
                                 <p>LUCIANOLIMA00</p>
                                 <img src={githubBlack} alt=""/>
                             </a>
-                            <a href="https://www.behance.net/lucianolima00" target="_blank" className="social-link">
+                            <a href="https://www.behance.net/lucianolima00" target="_blank" rel="noreferrer" className="social-link">
                                 <p>LUCIANOLIMA00</p>
                                 <img src={behanceBlack} alt=""/>
                             </a>
-                            <a href="https://www.linkedin.com/in/lucianolima00" target="_blank" className="social-link">
+                            <a href="https://www.linkedin.com/in/lucianolima00" target="_blank" rel="noreferrer" className="social-link">
                                 <p>LUCIANOLIMA00</p>
                                 <img src={linkedinBlack} alt=""/>
                             </a>
-                            <a href="https://www.instagram.com/luciano.lima00" target="_blank" className="social-link">
+                            <a href="https://www.instagram.com/luciano.lima00" target="_blank" rel="noreferrer" className="social-link">
                                 <p>LUCIANO.LIMA00</p>
                                 <img src={instaBlack} alt=""/>
                             </a>
