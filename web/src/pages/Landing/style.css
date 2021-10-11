@@ -158,7 +158,7 @@
     #portfolio-phone-2>img {
         width: 450px;
         margin-top: 5rem;
-        margin-left: 3rem;
+        margin-right: 3rem;
     }
     
     #knowledge {
@@ -326,7 +326,7 @@
         overflow: visible;
         position: absolute;
         left: 28%;
-        top: 270%;
+        top: 150vw;
     }
     
     #portfolio-phone-3>img {
@@ -398,7 +398,7 @@
         position: absolute;
         width: 100%;
         left: 50%;
-        top: 256%;
+        top: 140vw;
         overflow-y: hidden;
         height: 90%;
         z-index: -1;
@@ -440,7 +440,7 @@
             padding: 7.5% 20px;
         }
         #white-social-links {
-            margin-top: 33rem;
+            margin: 32rem 0 11rem 0 ;
         }
         .social-link>img {
             width: 22px;
