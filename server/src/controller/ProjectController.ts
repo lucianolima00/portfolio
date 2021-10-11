@@ -10,8 +10,10 @@ class ProjectController {
                 id: project.id,
                 name: project.name,
                 image: `http://localhost:3333/uploads/${project.image}`,
-                first_tech: project.first_tech,
-                second_tech: project.second_tech
+                first_tech_name: project.first_tech_name,
+                first_tech_color: project.first_tech_color,
+                second_tech_name: project.second_tech_name,
+                second_tech_color: project.second_tech_color
             }
         })
     
@@ -26,16 +28,18 @@ class ProjectController {
         if (!project) {
             return response.status(400).json({ message: "Project not found" });
         }
-    
+
         const serializedProject = {
             id: project.id,
             name: project.name,
             image: `http://localhost:3333/uploads/${project.image}`,
             description: project.description,
-            first_tech: project.first_tech,
-            second_tech: project.second_tech
-        };
-    
+            first_tech_name: project.first_tech_name,
+            first_tech_color: project.first_tech_color,
+            second_tech_name: project.second_tech_name,
+            second_tech_color: project.second_tech_color
+        }
+
         return response.json(serializedProject);
     }
 }

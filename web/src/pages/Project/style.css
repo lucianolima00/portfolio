@@ -30,11 +30,14 @@
         align-items: center;
         justify-content: center;
     }
-    
-    #logo {
+
+    #logo-container {
         margin: 1.7rem 0 0 2rem;
-        align-self: start;
         flex: 1 100%;
+    }
+
+    #logo {
+        align-self: start;
     }
     
     #logo>img {
@@ -141,12 +144,11 @@
         width: 15px;
         height: 15px;
         align-self: center;
-        margin-left: 1rem;
     }
 
     .tech-name {
         font-size: 9pt;
-        margin-left: 0.3rem;
+        margin: 0 1rem 0 0.3rem;
         align-self: center;
     }
 
@@ -169,12 +171,11 @@
         width: 15px;
         height: 15px;
         align-self: center;
-        margin-left: 1rem;
     }
     
     .tech-name {
         font-size: 9pt;
-        margin-left: 0.3rem;
+        margin: 0 1rem 0 0.3rem;
     }
     
     .tech-name>p {
@@ -204,7 +205,7 @@
     }
     
     @media (min-width: 1600px) {
-        #logo {
+        #logo-container {
             margin: 2.5rem 0 0 3rem;
         }
         #logo>img {
@@ -216,106 +217,17 @@
         #everything {
             font-size: 5rem;
         }
-        #portfolio-phone-1>img {
-            width: 1000px;
-        }
-        #social-background {
-            width: 300px;
-            border-radius: 35px;
-            top: 74%;
-            left: 93%;
-            padding: 7.5% 20px;
-        }
-        #white-social-links {
-            margin-top: 31.5rem;
-        }
-        .social-link>img {
-            width: 22px;
-            height: 22px;
-            margin: 0.6rem 2rem;
-        }
-        #title {
-            font-size: 3.5rem;
-        }
-        #portfolio-phone-2 {
-            flex: 1 1 50%;
-            overflow: visible;
-        }
-        #portfolio-phone-2>img {
-            width: 700px;
-            margin-top: 6rem;
-        }
-        #knowledge-titles>span {
-            font-size: 3rem;
-        }
-        #knowledge-skills {
-            margin: 8rem 0;
-        }
-        #knowledge-skills>p {
-            font-size: 2rem;
-        }
-        .arrow-button>img {
-            width: 70px;
-            margin: 0 1rem;
-        }
-        #black-social-link>a>img {
-            margin-top: 0.9;
-        }
-        .card-body {
-            background-color: #F3F3F3;
-            border-radius: 30px;
-            box-shadow: -2px 3px 5px rgba(0, 0, 0, 0.166);
-            height: 400px;
-            width: 500px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .card-picture {
-            background: #FFF;
-            border-radius: 30px;
-            width: 94%;
-            height: 84%;
-            box-shadow: -2px 3px 5px rgba(0, 0, 0, 0.166);
-            margin-top: 3%;
-        }
-        .card-content {
-            display: flex;
-            width: 94%;
-        }
-        .card-tecnologies {
-            display: flex;
-            flex: 50%;
-            padding: 0.3rem 1rem 0.3rem 0;
-        }
         .tech-dot {
             border-radius: 50%;
             width: 15px;
             height: 15px;
             align-self: center;
-            margin-left: 1rem;
         }
         .tech-name {
             font-size: 9pt;
-            margin-left: 0.3rem;
+            margin: 0 1rem 0 0.3rem;
         }
         .tech-name>p {
             color: #707070;
-        }
-        .card-link {
-            flex: 50%;
-        }
-        .card-info {
-            margin: 0 0.5rem;
-        }
-        .card-title>p {
-            color: #707070;
-        }
-        .card-link {
-            text-align: right;
-            padding: 0.3rem 0.5rem 0 0;
-        }
-        .card-link>a>img {
-            height: 40px;
         }
     }
