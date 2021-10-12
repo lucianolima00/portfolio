@@ -27,7 +27,7 @@ import {useRef} from "react";
 // @ts-ignore
 emailjs.init(process.env.REACT_APP_EMAILJS_USER_ID);
 
-const Landing = (message?: any) => {
+const Landing = () => {
 
     interface Project {
         id: number;
@@ -76,7 +76,7 @@ const Landing = (message?: any) => {
             message: formData.message,
             email: formData.email
         })
-            .then((response) => {
+            .then(() => {
                     alert("E-mail sent successfully, Thank You!!");
                 },
                 (error) => {

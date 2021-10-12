@@ -1,5 +1,9 @@
 # CHANGES
 
+## 0.0.6
+
+Email sending in Landing Page ([@luciano.lima00](https://github.com/lucianolima00))
+
 ## 0.0.5
 
 Using api to get landing and project info and fix responsive layout issues ([@luciano.lima00](https://github.com/lucianolima00))
