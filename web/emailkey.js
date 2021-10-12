@@ -1,4 +1,4 @@
 export default {
-    USER_ID: `user_Gg5oEwMkCEBgThh4qeXfz`, //userID
-    TEMPLATE_ID: `hexpower_temp`,         //templateID
+    USER_ID: process.env.REACT_APP_EMAILJS_USER_ID, //userID
+    TEMPLATE_ID: process.env.REACT_APP_EMAILJS_TEMPLATE_ID         //templateID
 }

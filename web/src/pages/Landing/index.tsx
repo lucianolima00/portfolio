@@ -1,8 +1,9 @@
-import React, {useEffect, useState} from "react";
+import React, {ChangeEvent, FormEvent, useEffect, useState} from "react";
 import './style.css';
 import { Link } from "react-router-dom";
 
 import api from '../../services/api';
+import emailjs from 'emailjs-com';
 
 import logo from '../../assets/lima-logo-black.png';
 import phone1 from '../../assets/iphone-portifolio-1.png';
@@ -23,7 +24,10 @@ import cardOpen from '../../assets/card-open-button.png'
 import sendButton from '../../assets/send-button.png'
 import {useRef} from "react";
 
-const Landing = () => {
+// @ts-ignore
+emailjs.init(process.env.REACT_APP_EMAILJS_USER_ID);
+
+const Landing = (message?: any) => {
 
     interface Project {
         id: number;
@@ -37,6 +41,11 @@ const Landing = () => {
 
     const [projects, setProjects] = useState<Project[]>([]);
 
+    const [formData, setFormData] = useState({
+       message: '',
+       email: ''
+    });
+
     useEffect(() => {
         api.get('/').then(response => {
             setProjects(response.data);
@@ -47,6 +56,32 @@ const Landing = () => {
 
     const scroll = (scrollOffset = 0) => {
         ref.current.scrollLeft += scrollOffset;
+    };
+
+    function handleInputChange (event: ChangeEvent<HTMLInputElement>) {
+        const { name, value} = event.target;
+        setFormData({ ...formData, [name]: value });
+    }
+
+    function handleTextAreaChange (event: ChangeEvent<HTMLTextAreaElement>) {
+        const { name, value} = event.target;
+        setFormData({ ...formData, [name]: value });
+    }
+
+    const handleSubmit = (event: FormEvent) => {
+        event.preventDefault();
+
+        // @ts-ignore
+        emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, event.target, process.env.REACT_APP_EMAILJS_USER_ID, {
+            message: formData.message,
+            email: formData.email
+        })
+            .then((response) => {
+                    alert("E-mail sent successfully, Thank You!!");
+                },
+                (error) => {
+                    alert(error.text);
+                });
     };
 
     return(
@@ -182,14 +217,10 @@ const Landing = () => {
                     </div>
                     <div className="topic-content" id="contact-content">
                         <div className="contact-input">
-                            <form >
-                                <div className="contact-text">
-                                        <textarea name="contact-textarea" id="contact-textarea" rows={16} cols={40} placeholder="MESSAGE"/>
-                                        <input type="email" name="contact-email" id="contact-email" placeholder="E-MAIL"/>
-                                </div>
-                                <div className="contact-submit">
-                                    <img src={sendButton} alt="" />
-                                </div>
+                            <form id="contact-form" onSubmit={handleSubmit}>
+                                <textarea className="contact-text" name="message" id="contact-textarea" rows={16} cols={40} placeholder="MESSAGE" onChange={handleTextAreaChange}/>
+                                <input  className="contact-text" type="email" name="email" id="contact-email" placeholder="E-MAIL" onChange={handleInputChange}/>
+                                <input className="contact-submit" type="image" src={sendButton} alt="" onSubmit={handleSubmit}/>
                             </form>
                         </div>
                         <div id="portfolio-phone-3">
