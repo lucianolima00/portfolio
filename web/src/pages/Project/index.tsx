@@ -5,19 +5,8 @@ import api from "../../services/api";
 
 import logo from '../../assets/lima-logo-black.png';
 import openOnGit from '../../assets/open-on-git.png'
-import projectImage from '../../assets/project-image.png'
 import arrowButton from '../../assets/arrow-button.svg'
-import {useRef} from "react";
 
-var bgColors = { 
-    "PHP": "#4F309B",
-    "Flutter": "#04DAF2",
-    "NodeJS": "#8CC152",
-    "Dart": "#EC6C3C",
-    "Javascript": "#ECE03C",
-};
-
-const projectName = "WEB PORTFOLIO";
 
 const ProjectView = () => {
     interface Project {
@@ -29,6 +18,7 @@ const ProjectView = () => {
         first_tech_color: string;
         second_tech_name: string;
         second_tech_color: string;
+        url: string;
     }
 
     let id: any;
@@ -43,15 +33,6 @@ const ProjectView = () => {
             setProject(response.data);
         })
     }, []);
-
-    console.log(project);
-
-    const ref = useRef<HTMLDivElement>(document.createElement("div"));
-
-    const scroll = (scrollOffset = 0) => {
-        ref.current.scrollLeft += scrollOffset;
-    };
-
     return(
         <div id='page-project'>
             <div id="background-middle-right">
@@ -93,7 +74,7 @@ const ProjectView = () => {
                                 <p>{project.description}</p>
                             </div>
                             <div className="project-info">
-                                <div className="project-tecnologies">
+                                <div className="project-technologies">
                                     <div className="tech-dot" style={{backgroundColor: project.first_tech_color}}/>
                                     <div className="tech-name">
                                         <p>{project.first_tech_name}</p>
@@ -104,7 +85,7 @@ const ProjectView = () => {
                                     </div>
                                 </div>
                                 <div className="project-link">
-                                    <a href="https://github.com/lucianolima00">
+                                    <a href={project.url} target="_blank">
                                         <img src={openOnGit} alt="" />
                                     </a>
                                 </div>

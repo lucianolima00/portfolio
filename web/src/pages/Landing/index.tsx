@@ -37,6 +37,7 @@ const Landing = () => {
         first_tech_color: string;
         second_tech_name: string;
         second_tech_color: string;
+        url: string;
     }
 
     const [projects, setProjects] = useState<Project[]>([]);
@@ -157,7 +158,7 @@ const Landing = () => {
                                             </div>
                                         </div>
                                         <div className="card-link">
-                                            <a href="https://github.com/lucianolima00">
+                                            <a href={project.url} target="_blank">
                                                 <img src={openOnGit} alt="" />
                                             </a>
                                         </div>
@@ -188,7 +189,7 @@ const Landing = () => {
                         <div id="portfolio-phone-2">
                             <img src={phone2} alt="" />
                         </div>
-                        <div id="knownledge">
+                        <div id="knowledge">
                             <div id="knowledge-titles">
                                 <span>WEB DEVELOPER</span>
                                 <span>WEB DESIGNER</span>

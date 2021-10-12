@@ -9,7 +9,8 @@ export async function seed(knex: Knex) {
             first_tech_name: "ReactJS",
             first_tech_color: "#04DAF2",
             second_tech_name: "NodeJS",
-            second_tech_color: "#8CC152"
+            second_tech_color: "#8CC152",
+            url: "https://github.com/lucianolima00/portfolio"
         },
         { 
             image: "mobile-portfolio.png",
@@ -18,7 +19,8 @@ export async function seed(knex: Knex) {
             first_tech_name: "Flutter",
             first_tech_color: "#04DAF2",
             second_tech_name: "Dart",
-            second_tech_color: "#EC6C3C"
+            second_tech_color: "#EC6C3C",
+            url: "https://github.com/lucianolima00/portfolio_flutter"
         },
         { 
             image: "mobile-pocket.png",
@@ -27,7 +29,8 @@ export async function seed(knex: Knex) {
             first_tech_name: "Flutter",
             first_tech_color: "#04DAF2",
             second_tech_name: "Dart",
-            second_tech_color: "#EC6C3C"
+            second_tech_color: "#EC6C3C",
+            url: "https://github.com/lucianolima00/pocket_flutter"
         },
         { 
             image: "web-pocket.png",
@@ -36,7 +39,8 @@ export async function seed(knex: Knex) {
             first_tech_name: "ReactJS",
             first_tech_color: "#04DAF2",
             second_tech_name: "NodeJS",
-            second_tech_color: "#8CC152"
+            second_tech_color: "#8CC152",
+            url: "https://github.com/lucianolima00"
         }
     ])
 
