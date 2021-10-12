@@ -11,6 +11,7 @@ export async function up(knex: Knex): Promise<void> {
         table.string('first_tech_color').notNullable();
         table.string('second_tech_name');
         table.string('second_tech_color');
+        table.string('url').notNullable();
     });
 }
 
