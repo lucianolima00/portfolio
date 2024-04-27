@@ -1,11 +1,10 @@
 import './style.css';
-import { Link, useParams } from "react-router-dom";
-import React, { useEffect, useState } from 'react';
+import {useParams} from "react-router-dom";
+import React, {useEffect, useState} from 'react';
 import api from "../../services/api";
-
-import logo from '../../assets/lima-logo-black.png';
 import openOnGit from '../../assets/open-on-git.png'
-import arrowButton from '../../assets/arrow-button.svg'
+
+import Header from "../../components/Header";
 
 
 const ProjectView = () => {
@@ -33,7 +32,7 @@ const ProjectView = () => {
             setProject(response.data);
         })
     }, []);
-    return(
+    return (
         <div id='page-project'>
             <div id="background-middle-right">
             </div>
@@ -41,30 +40,14 @@ const ProjectView = () => {
 
                 {/* HEADER */}
 
-                <div id="header">
-                    <div id="header-logo-back">
-                        <div id="logo-container">
-                            <Link id='logo' to="/">
-                                <img src={logo} alt='LIMA' />
-                            </Link>
-                        </div>
-                        <Link id='back-home' to="/">
-                            <img src={arrowButton} alt='' />
-                            <b>BACK TO HOME</b>
-                        </Link>
-                    </div>
-                    <div id='header-phrase'>
-                        <span id="create">CREATE</span>
-                        <span id="everything">EVERYTHING</span>
-                    </div>
-                </div>
+                <Header backButton={true}/>
 
                 {/* PROJECTS */}
 
                 {
                     project ? (<div className="project">
                         <div className="image">
-                            <img src={project.image} alt={project.name} />
+                            <img src={project.image} alt={project.name}/>
                         </div>
                         <div id="content">
                             <div className="project-title">
@@ -86,7 +69,7 @@ const ProjectView = () => {
                                 </div>
                                 <div className="project-link">
                                     <a href={project.url} target="_blank">
-                                        <img src={openOnGit} alt="" />
+                                        <img src={openOnGit} alt=""/>
                                     </a>
                                 </div>
                             </div>
@@ -95,7 +78,7 @@ const ProjectView = () => {
                 }
 
                 <div id="copyright-container">
-                    <b id="copyright">COPYRIGHT © 2021 LIMA</b>
+                    <b id="copyright">COPYRIGHT © 2024 LIMA</b>
                 </div>
                 <div id="background-bottom-container-right">
                     <div id="background-bottom-right"/>

@@ -1,11 +1,9 @@
-import React, {ChangeEvent, FormEvent, useEffect, useState} from "react";
+import React, {ChangeEvent, FormEvent, useEffect, useRef, useState} from "react";
 import './style.css';
-import { Link } from "react-router-dom";
 
 import api from '../../services/api';
 import emailjs from 'emailjs-com';
 
-import logo from '../../assets/lima-logo-black.png';
 import phone1 from '../../assets/iphone-portifolio-1.png';
 import phone2 from '../../assets/iphone-portifolio-2.png';
 import phone3 from '../../assets/iphone-portifolio-3.png';
@@ -19,10 +17,10 @@ import linkedinBlack from '../../assets/linkedin.png'
 import instaBlack from '../../assets/insta-logo.png'
 import backButton from '../../assets/back-button.png'
 import forwardButton from '../../assets/forward-button.png'
-import openOnGit from '../../assets/open-on-git.png'
-import cardOpen from '../../assets/card-open-button.png'
 import sendButton from '../../assets/send-button.png'
-import {useRef} from "react";
+import Footer from "../../components/Footer";
+import Card from "../../components/Card";
+import Header from "../../components/Header";
 
 // @ts-ignore
 emailjs.init(process.env.REACT_APP_EMAILJS_USER_ID);
@@ -43,8 +41,8 @@ const Landing = () => {
     const [projects, setProjects] = useState<Project[]>([]);
 
     const [formData, setFormData] = useState({
-       message: '',
-       email: ''
+        message: '',
+        email: ''
     });
 
     useEffect(() => {
@@ -59,14 +57,14 @@ const Landing = () => {
         ref.current.scrollLeft += scrollOffset;
     };
 
-    function handleInputChange (event: ChangeEvent<HTMLInputElement>) {
-        const { name, value} = event.target;
-        setFormData({ ...formData, [name]: value });
+    function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
+        const {name, value} = event.target;
+        setFormData({...formData, [name]: value});
     }
 
-    function handleTextAreaChange (event: ChangeEvent<HTMLTextAreaElement>) {
-        const { name, value} = event.target;
-        setFormData({ ...formData, [name]: value });
+    function handleTextAreaChange(event: ChangeEvent<HTMLTextAreaElement>) {
+        const {name, value} = event.target;
+        setFormData({...formData, [name]: value});
     }
 
     const handleSubmit = (event: FormEvent) => {
@@ -76,16 +74,15 @@ const Landing = () => {
         emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, event.target, process.env.REACT_APP_EMAILJS_USER_ID, {
             message: formData.message,
             email: formData.email
-        })
-            .then(() => {
-                    alert("E-mail sent successfully, Thank You!!");
-                },
-                (error) => {
-                    alert(error.text);
-                });
+        }).then(() => {
+            alert("E-mail sent successfully, Thank You!!");
+        },
+        (error) => {
+            alert(error.text);
+        });
     };
 
-    return(
+    return (
         <div id='page-landing'>
             <div id="background-middle">
             </div>
@@ -93,167 +90,137 @@ const Landing = () => {
 
                 {/* LANDING */}
 
-                <div id="header">
-                    <div id="logo-container">
-                        <Link id='logo' to="/">
-                            <img src={logo} alt='LIMA' />
-                        </Link>
-                    </div>
-                    <div id='header-phrase'>
-                        <span id="create">CREATE</span>
-                        <span id="everything">EVERYTHING</span>
-                    </div>
-                    <div/>
-                    <div id="portfolio-phone-1">
-                        <img src={phone1} alt="" />
-                    </div>
-
-                    <div id="social-background"/>
-                    <div id="white-social-links">
-                        <a href="https://github.com/lucianolima00" target="_blank" rel="noreferrer" className="social-link">
-                            <img src={githubWhite} alt=""/>
-                        </a>
-                        <a href="https://www.behance.net/lucianolima00" target="_blank" rel="noreferrer" className="social-link">
-                            <img src={behanceWhite} alt=""/>
-                        </a>
-                        <a href="https://www.linkedin.com/in/lucianolima00" target="_blank" rel="noreferrer" className="social-link">
-                            <img src={linkedinWhite} alt=""/>
-                        </a>
-                        <a href="https://www.instagram.com/luciano.lima00" target="_blank" rel="noreferrer" className="social-link">
-                            <img src={instaWhite} alt=""/>
-                        </a>
-                    </div>
+                <Header backButton={false}/>
+                <div id="portfolio-phone-1">
+                    <img src={phone1} alt=""/>
                 </div>
 
-                {/* PROJECTS */}
-
-                <div className="topic project-topic">
-                    <div className="topic-header">
-                        <span className="title">PROJECTS</span>
-                        <div id="interactive-buttons">
-                            <div className="arrow-button">
-                                <img src={backButton} alt="" onClick={() => scroll(-600)}/>
-                            </div>
-                            <div className="arrow-button">
-                                <img src={forwardButton} alt="" onClick={() => scroll(600)}/>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="project-content" ref={ref!}>
-                        {projects.map(project => (
-                            <div className="card" key={project.id}>
-                                <div className="card-body">
-                                    <div className="card-picture">
-                                        <img src={project.image} alt={project.name}/>
-                                    </div>
-                                    <div className="card-content">
-                                        <div className="card-technologies">
-                                            <div className="tech-dot" style={{backgroundColor: project.first_tech_color}}/>
-                                            <div className="tech-name">
-                                                <p>{project.first_tech_name}</p>
-                                            </div>
-                                            <div className="tech-dot" style={{backgroundColor: project.second_tech_color}}/>
-                                            <div className="tech-name">
-                                                <p>{project.second_tech_name}</p>
-                                            </div>
-                                        </div>
-                                        <div className="card-link">
-                                            <a href={project.url} target="_blank">
-                                                <img src={openOnGit} alt="" />
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card-info">
-                                    <div className="card-title">
-                                        <p>{project.name}</p>
-                                    </div>
-                                    <div className="card-button">
-                                        <Link to={`project/${project.id}`}>
-                                            <img src={cardOpen} alt="" />
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                <div id="social-background"/>
+                <div id="white-social-links">
+                    <a href="https://github.com/lucianolima00" target="_blank" rel="noreferrer"
+                       className="social-link">
+                        <img src={githubWhite} alt=""/>
+                    </a>
+                    <a href="https://www.behance.net/lucianolima00" target="_blank" rel="noreferrer"
+                       className="social-link">
+                        <img src={behanceWhite} alt=""/>
+                    </a>
+                    <a href="https://www.linkedin.com/in/lucianolima00" target="_blank" rel="noreferrer"
+                       className="social-link">
+                        <img src={linkedinWhite} alt=""/>
+                    </a>
+                    <a href="https://www.instagram.com/luciano.lima00" target="_blank" rel="noreferrer"
+                       className="social-link">
+                        <img src={instaWhite} alt=""/>
+                    </a>
                 </div>
+            </div>
 
-                {/* ABOUT */}
+            {/* PROJECTS */}
 
-                <div className="topic">
-                    <div className="topic-header">
-                        <span className="title">ABOUT</span>
-                    </div>
-                    <div className="topic-content">
-                        <div id="portfolio-phone-2">
-                            <img src={phone2} alt="" />
+            <div className="topic project-topic">
+                <div className="topic-header">
+                    <span className="title">PROJECTS</span>
+                    <div id="interactive-buttons">
+                        <div className="arrow-button">
+                            <img src={backButton} alt="" onClick={() => scroll(-600)}/>
                         </div>
-                        <div id="knowledge">
-                            <div id="knowledge-titles">
-                                <span>WEB DEVELOPER</span>
-                                <span>WEB DESIGNER</span>
-                                <span>MOBILE DEVELOPER</span>
-                            </div>
-                            <div id="knowledge-skills">
-                                <p>PHP</p>
-                                <p>RUBY</p>
-                                <p>FLUTTER</p>
-                                <p>PHOTOSHOP</p>
-                                <p>ILLUSTRATOR</p>
-                                <p>ADOBE XD</p>
-                                <p>REACT</p>
-                                <p>NODEJS</p>
-                                <p>DEVOPS</p>
-                            </div>
+                        <div className="arrow-button">
+                            <img src={forwardButton} alt="" onClick={() => scroll(600)}/>
                         </div>
                     </div>
                 </div>
+                <div id="project-content" ref={ref!}>
+                    {projects.map(project => (
+                        <Card id={project.id}
+                              image={project.image}
+                              name={project.name}
+                              first_tech_color={project.first_tech_color}
+                              first_tech_name={project.first_tech_name}
+                              second_tech_color={project.second_tech_color}
+                              second_tech_name={project.second_tech_name}
+                              url={project.url}
+                        />
+                    ))}
+                </div>
+            </div>
 
-                {/* CONTACT */}
+            {/* ABOUT */}
 
-                <div className="topic">
-                    <div className="topic-header">
-                        <span className="title">CONTACT</span>
+            <div className="topic">
+                <div className="topic-header">
+                    <span className="title">ABOUT</span>
+                </div>
+                <div className="topic-content">
+                    <div id="portfolio-phone-2">
+                        <img src={phone2} alt=""/>
                     </div>
-                    <div className="topic-content" id="contact-content">
-                        <div className="contact-input">
-                            <form id="contact-form" onSubmit={handleSubmit}>
-                                <textarea className="contact-text" name="message" id="contact-textarea" rows={16} cols={40} placeholder="MESSAGE" onChange={handleTextAreaChange}/>
-                                <input  className="contact-text" type="email" name="email" id="contact-email" placeholder="E-MAIL" onChange={handleInputChange}/>
-                                <input className="contact-submit" type="image" src={sendButton} alt="" onSubmit={handleSubmit}/>
-                            </form>
+                    <div id="knowledge">
+                        <div id="knowledge-titles">
+                            <span>WEB DEVELOPER</span>
+                            <span>WEB DESIGNER</span>
+                            <span>MOBILE DEVELOPER</span>
                         </div>
-                        <div id="portfolio-phone-3">
-                            <img src={phone3} alt="" />
-                        </div>
-                        <div id="black-social-links">
-                            <a href="https://github.com/lucianolima00" target="_blank" rel="noreferrer" className="social-link">
-                                <p>LUCIANOLIMA00</p>
-                                <img src={githubBlack} alt=""/>
-                            </a>
-                            <a href="https://www.behance.net/lucianolima00" target="_blank" rel="noreferrer" className="social-link">
-                                <p>LUCIANOLIMA00</p>
-                                <img src={behanceBlack} alt=""/>
-                            </a>
-                            <a href="https://www.linkedin.com/in/lucianolima00" target="_blank" rel="noreferrer" className="social-link">
-                                <p>LUCIANOLIMA00</p>
-                                <img src={linkedinBlack} alt=""/>
-                            </a>
-                            <a href="https://www.instagram.com/luciano.lima00" target="_blank" rel="noreferrer" className="social-link">
-                                <p>LUCIANO.LIMA00</p>
-                                <img src={instaBlack} alt=""/>
-                            </a>
+                        <div id="knowledge-skills">
+                            <p>PHP</p>
+                            <p>YII2</p>
+                            <p>LARAVEL</p>
+                            <p>TYPESCRIPT</p>
+                            <p>REACTJS</p>
+                            <p>NODEJS</p>
+                            <p>PHOTOSHOP</p>
+                            <p>ILLUSTRATOR</p>
+                            <p>ADOBE XD</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="copyright-container">
-                <b id="copyright">COPYRIGHT © 2021 LIMA</b>
+
+            {/* CONTACT */}
+
+            <div className="topic">
+                <div className="topic-header">
+                    <span className="title">CONTACT</span>
+                </div>
+                <div className="topic-content" id="contact-content">
+                    <div className="contact-input">
+                        <form id="contact-form" onSubmit={handleSubmit}>
+                                <textarea className="contact-text" name="message" id="contact-textarea" rows={16}
+                                          cols={40} placeholder="MESSAGE" onChange={handleTextAreaChange}/>
+                            <input className="contact-text" type="email" name="email" id="contact-email"
+                                   placeholder="E-MAIL" onChange={handleInputChange}/>
+                            <input className="contact-submit" type="image" src={sendButton} alt=""
+                                   onSubmit={handleSubmit}/>
+                        </form>
+                    </div>
+                    <div id="portfolio-phone-3">
+                        <img src={phone3} alt=""/>
+                    </div>
+                    <div id="black-social-links">
+                        <a href="https://github.com/lucianolima00" target="_blank" rel="noreferrer"
+                           className="social-link">
+                            <p>LUCIANOLIMA00</p>
+                            <img src={githubBlack} alt=""/>
+                        </a>
+                        <a href="https://www.behance.net/lucianolima00" target="_blank" rel="noreferrer"
+                           className="social-link">
+                            <p>LUCIANOLIMA00</p>
+                            <img src={behanceBlack} alt=""/>
+                        </a>
+                        <a href="https://www.linkedin.com/in/lucianolima00" target="_blank" rel="noreferrer"
+                           className="social-link">
+                            <p>LUCIANOLIMA00</p>
+                            <img src={linkedinBlack} alt=""/>
+                        </a>
+                        <a href="https://www.instagram.com/luciano.lima00" target="_blank" rel="noreferrer"
+                           className="social-link">
+                            <p>LUCIANO.LIMA00</p>
+                            <img src={instaBlack} alt=""/>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div id="background-bottom-container">
-                <div id="background-bottom"/>
-            </div>
+            <Footer/>
         </div>
     );
 }

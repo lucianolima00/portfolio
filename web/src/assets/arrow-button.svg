@@ -1,6 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="10.697" height="15.804" viewBox="0 0 10.697 15.804">
-  <g id="arrow-button" transform="translate(2.118 2.118)">
-    <line id="Linha_28" data-name="Linha 28" x1="6.461" y2="5.784" transform="translate(0 5.784)" fill="none" stroke="#262626" stroke-linecap="round" stroke-width="3"/>
-    <line id="Linha_29" data-name="Linha 29" x1="6.461" y1="5.784" fill="none" stroke="#262626" stroke-linecap="round" stroke-width="3"/>
-  </g>
+    <g id="arrow-button" transform="translate(2.118 2.118)">
+        <line id="Linha_28" data-name="Linha 28" x1="6.461" y2="5.784" transform="translate(0 5.784)" fill="none"
+              stroke="#262626" stroke-linecap="round" stroke-width="3"/>
+        <line id="Linha_29" data-name="Linha 29" x1="6.461" y1="5.784" fill="none" stroke="#262626"
+              stroke-linecap="round" stroke-width="3"/>
+    </g>
 </svg>
